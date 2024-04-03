@@ -1,5 +1,10 @@
+import 'dart:io';
+
+import 'package:dio/dio.dart';
 import 'package:filepicker_windows/filepicker_windows.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +20,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Windows Installer',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(1, 1, 87, 155),
+        ),
         useMaterial3: true,
       ),
       home: MyHomePage(),
@@ -30,11 +37,59 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   TextEditingController _flutterLocation = TextEditingController();
+  late String _localPath;
+  late bool _permissionReady;
+  late TargetPlatform? platform;
 
   @override
   void initState() {
     _flutterLocation = TextEditingController(text: "c:\\flutter");
+    if (Platform.isAndroid) {
+      platform = TargetPlatform.android;
+    } else if (Platform.isIOS) {
+      platform = TargetPlatform.iOS;
+    } else if (Platform.isWindows) {
+      platform = TargetPlatform.windows;
+    }
     super.initState();
+  }
+
+  Future<bool> _checkPermission() async {
+    if (platform == TargetPlatform.android) {
+      final status = await Permission.storage.status;
+      if (status != PermissionStatus.granted) {
+        final result = await Permission.storage.request();
+        if (result == PermissionStatus.granted) {
+          return true;
+        }
+      } else {
+        return true;
+      }
+    } else {
+      return true;
+    }
+    return false;
+  }
+
+  Future<void> _prepareSaveDir() async {
+    _localPath = (await _findLocalPath())!;
+
+    print(_localPath);
+    final savedDir = Directory(_localPath);
+    bool hasExisted = await savedDir.exists();
+    if (!hasExisted) {
+      savedDir.create();
+    }
+  }
+
+  Future<String?> _findLocalPath() async {
+    if (platform == TargetPlatform.android) {
+      return "/sdcard/download/";
+    } else {
+      var directory = await Directory(_flutterLocation.value.text);
+      print("Directory: ${directory}");
+      return directory.path + Platform.pathSeparator;
+    }
   }
 
   @override
@@ -108,6 +163,39 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+            Container(
+              margin: const EdgeInsets.symmetric(
+                vertical: 15,
+              ),
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 25,
+                    vertical: 15,
+                  ),
+                ),
+                onPressed: () async {
+                  _permissionReady = await _checkPermission();
+                  if (_permissionReady) {
+                    await _prepareSaveDir();
+                    print("Downloading");
+                    try {
+                      // await Dio().download("https://******/image.jpg",
+                      //     _localPath + "/" + "filename.jpg");
+                      print("Download Completed.");
+                    } catch (e) {
+                      print("Download Failed.\n\n" + e.toString());
+                    }
+                  }
+                },
+                icon: Icon(
+                  Icons.install_desktop,
+                ),
+                label: Text(
+                  "INSTALL",
+                ),
+              ),
+            )
           ],
         ),
       ),
