@@ -22,8 +22,6 @@ class _MyHomePageState extends State<MyHomePage> {
   double _downloadTotal = 0.00;
   late SharedPreferences prefs;
 
-  List<Widget> homePageWidgets = [];
-
   Future<void> getData() async {
     setState(() {
       _isLoading = true;
@@ -41,7 +39,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    homePageWidgets = [];
     getData();
     if (Platform.isAndroid) {
       platform = TargetPlatform.android;
@@ -190,6 +187,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 try {
                                   setState(() {
                                     _downloadLoader = true;
+                                    _downloadCount = 0.00;
+                                    _downloadTotal = 0.00;
                                   });
                                   await Dio().download(
                                     "https://github.com//flutter/flutter/archive/refs/heads/master.zip",
@@ -202,8 +201,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                         _downloadTotal =
                                             double.parse(total.toString());
                                       });
-                                      print(_downloadCount);
-                                      print(_downloadTotal);
                                     },
                                   );
                                   setState(() {
@@ -223,41 +220,45 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                   ),
-                  if (_downloadLoader)
-                    Container(
-                      // color: Colors.red,
-                      width: 65,
-                      height: 65,
-                      child: _downloadTotal == -1
-                          ? const CircularProgressIndicator.adaptive(
-                              backgroundColor: Colors.black87,
-                            )
-                          : Stack(
-                              children: [
-                                Center(
-                                  child: Text(
-                                    "${((_downloadCount / _downloadTotal) * 100).toStringAsFixed(0)} %",
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
+                  // if (_downloadLoader)
+                  Container(
+                    // color: Colors.red,
+                    width: 65,
+                    height: 65,
+                    child: !_downloadLoader
+                        ? const SizedBox.expand()
+                        : _downloadTotal == -1
+                            ? const CircularProgressIndicator.adaptive(
+                                strokeWidth: 8,
+                                backgroundColor: Colors.black87,
+                              )
+                            : Stack(
+                                children: [
+                                  Center(
+                                    child: Text(
+                                      "${_downloadTotal == 0 ? 0 : ((_downloadCount / _downloadTotal) * 100).toStringAsFixed(0)}%",
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                Center(
-                                  child: SizedBox(
-                                    height: 65,
-                                    width: 65,
-                                    child: CircularProgressIndicator.adaptive(
-                                      backgroundColor: Colors.black87,
-                                      value: _downloadTotal <= 0
-                                          ? null
-                                          : _downloadCount / _downloadTotal,
+                                  Center(
+                                    child: SizedBox(
+                                      height: 65,
+                                      width: 65,
+                                      child: CircularProgressIndicator.adaptive(
+                                        backgroundColor: Colors.black87,
+                                        strokeWidth: 8,
+                                        value: _downloadTotal <= 0
+                                            ? null
+                                            : _downloadCount / _downloadTotal,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                    ),
+                                ],
+                              ),
+                  ),
                 ],
               ),
       ),
