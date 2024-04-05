@@ -4,8 +4,21 @@ import 'package:archive/archive_io.dart';
 import 'package:dio/dio.dart';
 import 'package:filepicker_windows/filepicker_windows.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+class AppPlatformChannel {
+  static Future<String> add(int a, int b) async {
+    const MethodChannel channel = MethodChannel('calc_channel');
+    try {
+      var result = await channel.invokeMethod('add', {'a': a, 'b': b});
+      return (result);
+    } catch (e) {
+      return (e.toString());
+    }
+  }
+}
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -247,6 +260,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         _downloadLoader ? "DOWNLOADING..." : "INSTALL",
                       ),
                     ),
+                  ),
+                  Container(
+                    child: ElevatedButton(
+                        onPressed: () async {
+                          var result = await AppPlatformChannel.add(12, 5);
+                          print("Result: $result");
+                        },
+                        child: Text("Test")),
                   ),
                   // if (_downloadLoader)
                   Container(
