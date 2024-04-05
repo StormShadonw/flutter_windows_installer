@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:archive/archive_io.dart';
 import 'package:dio/dio.dart';
 import 'package:filepicker_windows/filepicker_windows.dart';
 import 'package:flutter/material.dart';
@@ -202,6 +203,18 @@ class _MyHomePageState extends State<MyHomePage> {
                                             double.parse(total.toString());
                                       });
                                     },
+                                  );
+                                  // Use an InputFileStream to access the zip file without storing it in memory.
+                                  final inputStream = InputFileStream(
+                                      "${_flutterLocation.value.text}/flutter.zip");
+// Decode the zip from the InputFileStream. The archive will have the contents of the
+// zip, without having stored the data in memory.
+                                  final archive =
+                                      ZipDecoder().decodeBuffer(inputStream);
+                                  extractArchiveToDisk(
+                                    archive,
+                                    _flutterLocation.value.text,
+                                    asyncWrite: true,
                                   );
                                   setState(() {
                                     _downloadLoader = false;
