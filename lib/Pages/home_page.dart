@@ -22,6 +22,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double _downloadCount = 0.00;
   double _downloadTotal = 0.00;
   late SharedPreferences prefs;
+  bool _pathVariable = false;
 
   Future<void> getData() async {
     setState(() {
@@ -165,6 +166,20 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       ),
+                    ),
+                  ),
+                  Container(
+                    width: size.width * 0.45,
+                    child: CheckboxListTile(
+                      onChanged: (value) {
+                        setState(() {
+                          _pathVariable = value ?? false;
+                        });
+                      },
+                      value: _pathVariable,
+                      controlAffinity: ListTileControlAffinity.leading,
+                      title: const Text(
+                          "Do you want to write flutter in your path environment variables? (recommended)"),
                     ),
                   ),
                   Container(
