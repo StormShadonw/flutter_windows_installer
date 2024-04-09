@@ -194,7 +194,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       value: _pathVariable,
                       controlAffinity: ListTileControlAffinity.leading,
                       title: const Text(
-                          "Do you want to write flutter in your path environment variables? (recommended)"),
+                          "Do you want to write flutter in your path environment variable? (recommended)"),
                     ),
                   ),
                   Container(
