@@ -9,10 +9,12 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppPlatformChannel {
-  static Future<String> add(int a, int b) async {
+  static Future<String> add(String value) async {
     const MethodChannel channel = MethodChannel('calc_channel');
     try {
-      var result = await channel.invokeMethod('add', {'a': a, 'b': b});
+      var result = await channel.invokeMethod('add', {
+        'a': value,
+      });
       return (result);
     } catch (e) {
       return (e.toString());
@@ -35,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double _downloadCount = 0.00;
   double _downloadTotal = 0.00;
   late SharedPreferences prefs;
-  bool _pathVariable = false;
+  bool _pathVariable = true;
 
   Future<void> getData() async {
     setState(() {
@@ -244,6 +246,10 @@ class _MyHomePageState extends State<MyHomePage> {
                                     _flutterLocation.value.text,
                                     asyncWrite: true,
                                   );
+                                  if (_pathVariable) {
+                                    var result = await AppPlatformChannel.add(
+                                        _flutterLocation.value.text);
+                                  }
                                   setState(() {
                                     _downloadLoader = false;
                                   });
@@ -260,14 +266,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         _downloadLoader ? "DOWNLOADING..." : "INSTALL",
                       ),
                     ),
-                  ),
-                  Container(
-                    child: ElevatedButton(
-                        onPressed: () async {
-                          var result = await AppPlatformChannel.add(12, 5);
-                          print("Result: $result");
-                        },
-                        child: Text("Test")),
                   ),
                   // if (_downloadLoader)
                   Container(
