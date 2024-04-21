@@ -17,7 +17,6 @@ class AppPlatformChannel {
       var result = await channel.invokeMethod('add', {
         'a': value,
       });
-      print("c++ Result: $result");
       return (result);
     } catch (e) {
       return (e.toString());
@@ -33,8 +32,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   TextEditingController _flutterLocation = TextEditingController();
   late String _localPath;
-  late bool _permissionReady;
-  late TargetPlatform? platform;
+  // late TargetPlatform? platform;
   bool _isLoading = false;
   bool _downloadLoader = false;
   double _downloadCount = 0.00;
@@ -61,13 +59,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     getData();
-    if (Platform.isAndroid) {
-      platform = TargetPlatform.android;
-    } else if (Platform.isIOS) {
-      platform = TargetPlatform.iOS;
-    } else if (Platform.isWindows) {
-      platform = TargetPlatform.windows;
-    }
     super.initState();
   }
 
@@ -82,12 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<String?> _findLocalPath() async {
-    if (platform == TargetPlatform.android) {
-      return "/sdcard/download/";
-    } else {
-      var directory = await Directory(_flutterLocation.value.text);
-      return directory.path + Platform.pathSeparator;
-    }
+    var directory = await Directory(_flutterLocation.value.text);
+    return directory.path + Platform.pathSeparator;
   }
 
   @override
