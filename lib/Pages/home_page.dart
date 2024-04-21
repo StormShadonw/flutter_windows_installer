@@ -5,16 +5,19 @@ import 'package:dio/dio.dart';
 import 'package:filepicker_windows/filepicker_windows.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:lottie/lottie.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppPlatformChannel {
   static Future<String> add(String value) async {
+    print("Executing c++ Code");
     const MethodChannel channel = MethodChannel('calc_channel');
     try {
       var result = await channel.invokeMethod('add', {
         'a': value,
       });
+      print("c++ Result: $result");
       return (result);
     } catch (e) {
       return (e.toString());
@@ -38,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double _downloadTotal = 0.00;
   late SharedPreferences prefs;
   bool _pathVariable = true;
+  bool _installed = false;
 
   Future<void> getData() async {
     setState(() {
@@ -67,27 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
-  Future<bool> _checkPermission() async {
-    if (platform == TargetPlatform.android) {
-      final status = await Permission.storage.status;
-      if (status != PermissionStatus.granted) {
-        final result = await Permission.storage.request();
-        if (result == PermissionStatus.granted) {
-          return true;
-        }
-      } else {
-        return true;
-      }
-    } else {
-      return true;
-    }
-    return false;
-  }
-
   Future<void> _prepareSaveDir() async {
     _localPath = (await _findLocalPath())!;
 
-    print(_localPath);
     final savedDir = Directory(_localPath);
     bool hasExisted = await savedDir.exists();
     if (!hasExisted) {
@@ -100,7 +86,6 @@ class _MyHomePageState extends State<MyHomePage> {
       return "/sdcard/download/";
     } else {
       var directory = await Directory(_flutterLocation.value.text);
-      print("Directory: ${directory}");
       return directory.path + Platform.pathSeparator;
     }
   }
@@ -211,52 +196,57 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: _downloadLoader
                           ? null
                           : () async {
-                              _permissionReady = await _checkPermission();
-                              if (_permissionReady) {
-                                await _prepareSaveDir();
+                              try {
                                 print("Downloading");
-                                try {
-                                  setState(() {
-                                    _downloadLoader = true;
-                                    _downloadCount = 0.00;
-                                    _downloadTotal = 0.00;
-                                  });
-                                  await Dio().download(
-                                    "https://github.com//flutter/flutter/archive/refs/heads/master.zip",
-                                    _localPath + "/" + "flutter.zip",
-                                    lengthHeader: Headers.contentLengthHeader,
-                                    onReceiveProgress: (count, total) {
-                                      setState(() {
-                                        _downloadCount =
-                                            double.parse(count.toString());
-                                        _downloadTotal =
-                                            double.parse(total.toString());
-                                      });
-                                    },
-                                  );
-                                  // Use an InputFileStream to access the zip file without storing it in memory.
-                                  final inputStream = InputFileStream(
-                                      "${_flutterLocation.value.text}/flutter.zip");
-// Decode the zip from the InputFileStream. The archive will have the contents of the
-// zip, without having stored the data in memory.
-                                  final archive =
-                                      ZipDecoder().decodeBuffer(inputStream);
-                                  extractArchiveToDisk(
-                                    archive,
-                                    _flutterLocation.value.text,
-                                    asyncWrite: true,
-                                  );
-                                  if (_pathVariable) {
-                                    var result = await AppPlatformChannel.add(
-                                        _flutterLocation.value.text);
-                                  }
-                                  setState(() {
-                                    _downloadLoader = false;
-                                  });
-                                  print("Download Completed.");
-                                } catch (e) {
-                                  print("Download Failed.\n\n" + e.toString());
+                                setState(() {
+                                  _downloadLoader = true;
+                                  _downloadCount = 0.00;
+                                  _downloadTotal = 0.00;
+                                  _installed = false;
+                                });
+                                await Dio().download(
+                                  "https://github.com//flutter/flutter/archive/refs/heads/master.zip",
+                                  _localPath + "/" + "flutter.zip",
+                                  lengthHeader: Headers.contentLengthHeader,
+                                  onReceiveProgress: (count, total) {
+                                    setState(() {
+                                      _downloadCount =
+                                          double.parse(count.toString());
+                                      _downloadTotal =
+                                          double.parse(total.toString());
+                                    });
+                                  },
+                                );
+                                await _prepareSaveDir();
+                                // Use an InputFileStream to access the zip file without storing it in memory.
+                                final inputStream = InputFileStream(
+                                    "${_flutterLocation.value.text}/flutter.zip");
+
+                                final archive =
+                                    ZipDecoder().decodeBuffer(inputStream);
+                                extractArchiveToDisk(
+                                  archive,
+                                  _flutterLocation.value.text,
+                                  asyncWrite: true,
+                                );
+                                if (_pathVariable) {
+                                  print(_flutterLocation.value.text
+                                      .replaceAll("\\", "\\\\"));
+                                  var result = await AppPlatformChannel.add(
+                                      _flutterLocation.value.text
+                                          .replaceAll("\\", "\\\\"));
                                 }
+
+                                setState(() {
+                                  _installed = true;
+                                  _downloadLoader = false;
+                                });
+                                print("Download Completed.");
+                              } catch (e) {
+                                print("Download Failed.\n\n" + e.toString());
+                                setState(() {
+                                  _isLoading = false;
+                                });
                               }
                             },
                       icon: const Icon(
@@ -306,6 +296,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ],
                               ),
                   ),
+                  if (_installed)
+                    Lottie.network(
+                        'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json')
                 ],
               ),
       ),

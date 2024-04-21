@@ -90,41 +90,64 @@ bool SetRegistryStringValue(HKEY hKey, LPCWSTR subKey, LPCWSTR valueName, const 
                const flutter::EncodableMap *argsList = std::get_if<flutter::EncodableMap>(call.arguments()); 
                //we will get values in pairs ie., first::"a" second::10.
                //we get the second part
-               auto a_it = (argsList->find(flutter::EncodableValue("a")))->second;    
-               // Just converting it to int
-               int a = static_cast<int>(std::get<int>((a_it)));
-               
-               flutter::EncodableValue res ; // final result variable
-               if(a){
-                 // convert to string since we send back the result as string
-                 std::string c = std::to_string(a);
+               auto a_it = argsList->find(flutter::EncodableValue("a"));
+
+                if (a_it != argsList->end()) {
+               flutter::EncodableValue res;
+                std::string a = std::get<std::string>(a_it->second);
+                std::wstring c(a.begin(), a.end());
+
                      LPCWSTR subKey = L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment";
                       LPCWSTR valueName = L"PATH";
-
-                      // Obtener el valor actual del registro
                       std::wstring currentValue = GetRegistryStringValue(HKEY_LOCAL_MACHINE, subKey, valueName);
-
-                      // Agregar más datos al valor actual
-                      std::wstring newData = std::wstring(c.begin(), c.end());;
+                    std::wstring newData = std::wstring(c.begin(), c.end());
                       std::wstring newData1 = L"\\flutter-master\\bin";
                       std::wstring updatedValue = currentValue + L";" + newData + newData1; // Aquí se está concatenando el valor actual con los nuevos datos
-
-                      // Establecer el nuevo valor en el registro
-                      if (SetRegistryStringValue(HKEY_LOCAL_MACHINE, subKey, valueName, updatedValue)) {
-                          res = flutter::EncodableValue("Valor actualizado correctamente: " + c);
+               res = flutter::EncodableValue(a_it->second);
+                                     if (SetRegistryStringValue(HKEY_LOCAL_MACHINE, subKey, valueName, updatedValue)) {
+                          res = flutter::EncodableValue(a_it->second);
                           (*resPointer)->Success(res);
 
                       }
                       else {
-                 (*resPointer)->Error("Error occured");
+                 (*resPointer)->Error("The regisrty is not updated");
 
                       }
-                // send positive result
-                 (*resPointer)->Success(res);
-               }else{
-                // if not send error
-                 (*resPointer)->Error("Error occured");
-               }
+                  }
+                     else {
+        (*resPointer)->Error("El valor 'a' no se encontró");
+    }
+
+            //    if(a){
+            //     //  // convert to string since we send back the result as string
+
+
+            //     //       // Obtener el valor actual del registro
+            //     //       std::wstring currentValue = GetRegistryStringValue(HKEY_LOCAL_MACHINE, subKey, valueName);
+            //     //           res = flutter::EncodableValue("Valor actualizado correctamente: ");
+            //     //           (*resPointer)->Success(res);
+
+            //     //       // Agregar más datos al valor actual
+            //     //       std::wstring newData = std::wstring(c.begin(), c.end());
+            //     //       std::wstring newData1 = L"\\flutter-master\\bin";
+            //     //       std::wstring updatedValue = currentValue + L";" + newData + newData1; // Aquí se está concatenando el valor actual con los nuevos datos
+
+            //           // Establecer el nuevo valor en el registro
+            //     //       if (SetRegistryStringValue(HKEY_LOCAL_MACHINE, subKey, valueName, updatedValue)) {
+            //     //           res = flutter::EncodableValue("Valor actualizado correctamente: " + c);
+            //     //           (*resPointer)->Success(res);
+
+            //     //       }
+            //     //       else {
+            //     //  (*resPointer)->Error("Error occured");
+
+            //     //       }
+            //     // send positive result
+            //      (*resPointer)->Success(res);
+            //    }else{
+            //     // if not send error
+            //      (*resPointer)->Error("Error occured");
+            //    }
         }
     };
 
