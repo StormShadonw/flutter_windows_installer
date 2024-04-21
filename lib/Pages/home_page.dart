@@ -25,6 +25,9 @@ class AppPlatformChannel {
 }
 
 class MyHomePage extends StatefulWidget {
+  final String FLUTTER_GIT_URL =
+      "https://github.com//flutter/flutter/archive/refs/heads/master.zip";
+  final String FLUTTER_DEFAULT_INSTALLATION_LOCATION = "c:\\flutter";
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -48,8 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
     prefs = await SharedPreferences.getInstance();
     final String? _installPath = prefs.getString('installPath');
-    _flutterLocation =
-        TextEditingController(text: _installPath ?? "c:\\flutter");
+    _flutterLocation = TextEditingController(
+      text: _installPath ?? widget.FLUTTER_DEFAULT_INSTALLATION_LOCATION,
+    );
 
     setState(() {
       _isLoading = false;
@@ -75,6 +79,64 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<String?> _findLocalPath() async {
     var directory = await Directory(_flutterLocation.value.text);
     return directory.path + Platform.pathSeparator;
+  }
+
+  Future<void> download() async {
+    try {
+      print("Downloading");
+      setState(() {
+        _downloadLoader = true;
+        _downloadCount = 0.00;
+        _downloadTotal = 0.00;
+        _installed = false;
+      });
+      await _prepareSaveDir();
+
+      await Dio().download(
+        widget.FLUTTER_GIT_URL,
+        _localPath + "/" + "flutter.zip",
+        lengthHeader: Headers.contentLengthHeader,
+        onReceiveProgress: (count, total) {
+          setState(() {
+            _downloadCount = double.parse(count.toString());
+            _downloadTotal = double.parse(total.toString());
+          });
+        },
+      );
+      // Use an InputFileStream to access the zip file without storing it in memory.
+      final inputStream =
+          InputFileStream("${_flutterLocation.value.text}/flutter.zip");
+
+      final archive = ZipDecoder().decodeBuffer(inputStream);
+      extractArchiveToDisk(
+        archive,
+        _flutterLocation.value.text,
+        asyncWrite: true,
+      );
+      if (_pathVariable) {
+        await AppPlatformChannel.add(
+            _flutterLocation.value.text.replaceAll("\\", "\\\\"));
+      }
+
+      setState(() {
+        _installed = true;
+        _downloadLoader = false;
+      });
+      print("Download Completed.");
+    } catch (e) {
+      print("Download Failed.\n\n" + e.toString());
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString()),
+          backgroundColor: Theme.of(context).colorScheme.error,
+        ),
+      );
+      setState(() {
+        _installed = false;
+        _isLoading = false;
+      });
+    }
   }
 
   @override
@@ -166,13 +228,23 @@ class _MyHomePageState extends State<MyHomePage> {
                           });
                         },
                         value: _pathVariable,
+                        enabled: _installed || _downloadLoader ? false : true,
                         controlAffinity: ListTileControlAffinity.leading,
-                        title: const Text(
-                            "Do you want to write flutter in your path environment variable? (recommended)"),
+                        title: Text(
+                          "Do you want to write flutter in your path environment variable? (recommended)",
+                          style: TextStyle(
+                            color: _installed || _downloadLoader
+                                ? Colors.white70
+                                : Colors.white,
+                          ),
+                        ),
                       ),
                     ),
                     _installed
                         ? Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 15,
+                            ),
                             margin: const EdgeInsets.symmetric(
                               vertical: 5,
                             ),
@@ -186,6 +258,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 Text(
                                   "Installation successful!",
+                                  textAlign: TextAlign.center,
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleLarge!
@@ -195,6 +268,15 @@ class _MyHomePageState extends State<MyHomePage> {
                                             .onPrimary,
                                         fontWeight: FontWeight.bold,
                                       ),
+                                ),
+                                if (_pathVariable)
+                                  const Text(
+                                    "Run flutter doctor in any terminal to verify the installation.",
+                                    textAlign: TextAlign.center,
+                                  ),
+                                const Text(
+                                  "Remember to install the extensions for android studio or visual studio code for a complete development experience.",
+                                  textAlign: TextAlign.center,
                                 ),
                               ],
                             ),
@@ -210,67 +292,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                   vertical: 15,
                                 ),
                               ),
-                              onPressed: _downloadLoader
-                                  ? null
-                                  : () async {
-                                      try {
-                                        print("Downloading");
-                                        setState(() {
-                                          _downloadLoader = true;
-                                          _downloadCount = 0.00;
-                                          _downloadTotal = 0.00;
-                                          _installed = false;
-                                        });
-                                        await _prepareSaveDir();
-
-                                        await Dio().download(
-                                          "https://github.com//flutter/flutter/archive/refs/heads/master.zip",
-                                          _localPath + "/" + "flutter.zip",
-                                          lengthHeader:
-                                              Headers.contentLengthHeader,
-                                          onReceiveProgress: (count, total) {
-                                            setState(() {
-                                              _downloadCount = double.parse(
-                                                  count.toString());
-                                              _downloadTotal = double.parse(
-                                                  total.toString());
-                                            });
-                                          },
-                                        );
-                                        // Use an InputFileStream to access the zip file without storing it in memory.
-                                        final inputStream = InputFileStream(
-                                            "${_flutterLocation.value.text}/flutter.zip");
-
-                                        final archive = ZipDecoder()
-                                            .decodeBuffer(inputStream);
-                                        extractArchiveToDisk(
-                                          archive,
-                                          _flutterLocation.value.text,
-                                          asyncWrite: true,
-                                        );
-                                        if (_pathVariable) {
-                                          print(_flutterLocation.value.text
-                                              .replaceAll("\\", "\\\\"));
-                                          var result =
-                                              await AppPlatformChannel.add(
-                                                  _flutterLocation.value.text
-                                                      .replaceAll(
-                                                          "\\", "\\\\"));
-                                        }
-
-                                        setState(() {
-                                          _installed = true;
-                                          _downloadLoader = false;
-                                        });
-                                        print("Download Completed.");
-                                      } catch (e) {
-                                        print("Download Failed.\n\n" +
-                                            e.toString());
-                                        setState(() {
-                                          _isLoading = false;
-                                        });
-                                      }
-                                    },
+                              onPressed:
+                                  _downloadLoader ? null : () => download(),
                               icon: const Icon(
                                 Icons.install_desktop,
                               ),
