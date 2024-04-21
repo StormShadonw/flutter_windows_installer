@@ -1,6 +1,6 @@
 # flutter_windows_installer
 
-This is a project made with flutter for installing flutter on a Windows machine. You just need to run the .exe file from the following location: build\windows\x64\runner\Release.
+This is a project made with flutter for installing flutter on a Windows machine. You just need to run: build\windows\x64\runner\Release\flutter_windows_installer.exe.
 
 
 ## Characteristics
@@ -29,7 +29,7 @@ This is a project made with flutter for installing flutter on a Windows machine.
 git clone https://github.com/StormShadonw/flutter_windows_installer/tree/main
 ```
 
-2. Execute the .exe file in build\windows\x64\runner\Release
+2. Execute build\windows\x64\runner\Release\flutter_windows_installer.exe
 
 ## Contribution
 If you want to contribute to the project, follow the following steps:
