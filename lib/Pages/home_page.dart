@@ -135,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           // border: Border.all(color: Colors.blueAccent, width: 2),
                           borderRadius: BorderRadius.circular(5),
                         ),
-                        margin: const EdgeInsets.symmetric(vertical: 5),
+                        margin: const EdgeInsets.symmetric(vertical: 15),
                         width: size.width * 0.45,
                         child: TextFormField(
                           enabled: false,
@@ -145,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           decoration: const InputDecoration(
                             label: Text(
-                              "Target Location",
+                              "Installation location(choose a location that does not require administrator permissions)",
                               style: TextStyle(color: Colors.white),
                             ),
                             floatingLabelBehavior: FloatingLabelBehavior.auto,
@@ -292,6 +292,24 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ),
                           ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        bottom: 15,
+                        top: _installed ? 15 : 0,
+                      ),
+                      child: ElevatedButton.icon(
+                          style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 25,
+                              vertical: 15,
+                            ),
+                          ),
+                          onPressed: () {
+                            exit(0);
+                          },
+                          icon: const Icon(Icons.close),
+                          label: const Text("CLOSE")),
+                    ),
                     // if (_downloadLoader)
                     Container(
                       // color: Colors.red,
