@@ -100,206 +100,240 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: _isLoading
             ? const CircularProgressIndicator.adaptive()
-            : Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 5),
-                    child: FlutterLogo(
-                      size: size.height * 0.25,
-                    ),
-                  ),
-                  const Text(
-                    'FLUTTER WINDOWS INSTALLER',
-                    style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                  GestureDetector(
-                    onTap: () async {
-                      final result = file.getDirectory();
-                      if (result != null) {
-                        await prefs.setString('installPath', result.path);
-                        setState(() {
-                          _flutterLocation =
-                              TextEditingController(text: result.path);
-                        });
-                      }
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        // color: Colors.white,
-                        // border: Border.all(color: Colors.blueAccent, width: 2),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
+            : SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
                       margin: const EdgeInsets.symmetric(vertical: 5),
-                      width: size.width * 0.45,
-                      child: TextFormField(
-                        enabled: false,
-                        controller: _flutterLocation,
-                        style: const TextStyle(
-                          color: Colors.white,
-                        ),
-                        decoration: const InputDecoration(
-                          label: Text(
-                            "Target Location",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          floatingLabelBehavior: FloatingLabelBehavior.auto,
-                          fillColor: Colors.white,
-                          enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(width: 2, color: Colors.blueAccent),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(width: 2, color: Colors.blueAccent),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(width: 2, color: Colors.blueAccent),
-                          ),
-                          disabledBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(width: 2, color: Colors.blueAccent),
-                          ),
-                        ),
+                      child: FlutterLogo(
+                        size: size.height * 0.25,
                       ),
                     ),
-                  ),
-                  Container(
-                    width: size.width * 0.45,
-                    child: CheckboxListTile(
-                      onChanged: (value) {
-                        setState(() {
-                          _pathVariable = value ?? false;
-                        });
+                    const Text(
+                      'FLUTTER WINDOWS INSTALLER',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                    GestureDetector(
+                      onTap: () async {
+                        final result = file.getDirectory();
+                        if (result != null) {
+                          await prefs.setString('installPath', result.path);
+                          setState(() {
+                            _flutterLocation =
+                                TextEditingController(text: result.path);
+                          });
+                        }
                       },
-                      value: _pathVariable,
-                      controlAffinity: ListTileControlAffinity.leading,
-                      title: const Text(
-                          "Do you want to write flutter in your path environment variable? (recommended)"),
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(
-                      vertical: 15,
-                    ),
-                    child: ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 25,
-                          vertical: 15,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          // color: Colors.white,
+                          // border: Border.all(color: Colors.blueAccent, width: 2),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        margin: const EdgeInsets.symmetric(vertical: 5),
+                        width: size.width * 0.45,
+                        child: TextFormField(
+                          enabled: false,
+                          controller: _flutterLocation,
+                          style: const TextStyle(
+                            color: Colors.white,
+                          ),
+                          decoration: const InputDecoration(
+                            label: Text(
+                              "Target Location",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            floatingLabelBehavior: FloatingLabelBehavior.auto,
+                            fillColor: Colors.white,
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 2, color: Colors.blueAccent),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 2, color: Colors.blueAccent),
+                            ),
+                            errorBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 2, color: Colors.blueAccent),
+                            ),
+                            disabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  width: 2, color: Colors.blueAccent),
+                            ),
+                          ),
                         ),
                       ),
-                      onPressed: _downloadLoader
-                          ? null
-                          : () async {
-                              try {
-                                print("Downloading");
-                                setState(() {
-                                  _downloadLoader = true;
-                                  _downloadCount = 0.00;
-                                  _downloadTotal = 0.00;
-                                  _installed = false;
-                                });
-                                await Dio().download(
-                                  "https://github.com//flutter/flutter/archive/refs/heads/master.zip",
-                                  _localPath + "/" + "flutter.zip",
-                                  lengthHeader: Headers.contentLengthHeader,
-                                  onReceiveProgress: (count, total) {
-                                    setState(() {
-                                      _downloadCount =
-                                          double.parse(count.toString());
-                                      _downloadTotal =
-                                          double.parse(total.toString());
-                                    });
-                                  },
-                                );
-                                await _prepareSaveDir();
-                                // Use an InputFileStream to access the zip file without storing it in memory.
-                                final inputStream = InputFileStream(
-                                    "${_flutterLocation.value.text}/flutter.zip");
-
-                                final archive =
-                                    ZipDecoder().decodeBuffer(inputStream);
-                                extractArchiveToDisk(
-                                  archive,
-                                  _flutterLocation.value.text,
-                                  asyncWrite: true,
-                                );
-                                if (_pathVariable) {
-                                  print(_flutterLocation.value.text
-                                      .replaceAll("\\", "\\\\"));
-                                  var result = await AppPlatformChannel.add(
-                                      _flutterLocation.value.text
-                                          .replaceAll("\\", "\\\\"));
-                                }
-
-                                setState(() {
-                                  _installed = true;
-                                  _downloadLoader = false;
-                                });
-                                print("Download Completed.");
-                              } catch (e) {
-                                print("Download Failed.\n\n" + e.toString());
-                                setState(() {
-                                  _isLoading = false;
-                                });
-                              }
-                            },
-                      icon: const Icon(
-                        Icons.install_desktop,
-                      ),
-                      label: Text(
-                        _downloadLoader ? "DOWNLOADING..." : "INSTALL",
+                    ),
+                    Container(
+                      width: size.width * 0.45,
+                      child: CheckboxListTile(
+                        onChanged: (value) {
+                          setState(() {
+                            _pathVariable = value ?? false;
+                          });
+                        },
+                        value: _pathVariable,
+                        controlAffinity: ListTileControlAffinity.leading,
+                        title: const Text(
+                            "Do you want to write flutter in your path environment variable? (recommended)"),
                       ),
                     ),
-                  ),
-                  // if (_downloadLoader)
-                  Container(
-                    // color: Colors.red,
-                    width: 65,
-                    height: 65,
-                    child: !_downloadLoader
-                        ? const SizedBox.expand()
-                        : _downloadTotal == -1
-                            ? const CircularProgressIndicator.adaptive(
-                                strokeWidth: 8,
-                                backgroundColor: Colors.black87,
-                              )
-                            : Stack(
-                                children: [
-                                  Center(
-                                    child: Text(
-                                      "${_downloadTotal == 0 ? 0 : ((_downloadCount / _downloadTotal) * 100).toStringAsFixed(0)}%",
-                                      style: const TextStyle(
-                                        color: Colors.white,
+                    _installed
+                        ? Container(
+                            margin: const EdgeInsets.symmetric(
+                              vertical: 5,
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Lottie.asset(
+                                  "assets/animations/check.json",
+                                  repeat: false,
+                                  width: size.width * 0.08,
+                                ),
+                                Text(
+                                  "Installation successful!",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge!
+                                      .copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onPrimary,
                                         fontWeight: FontWeight.bold,
                                       ),
-                                    ),
-                                  ),
-                                  Center(
-                                    child: SizedBox(
-                                      height: 65,
-                                      width: 65,
-                                      child: CircularProgressIndicator.adaptive(
-                                        backgroundColor: Colors.black87,
-                                        strokeWidth: 8,
-                                        value: _downloadTotal <= 0
-                                            ? null
-                                            : _downloadCount / _downloadTotal,
+                                ),
+                              ],
+                            ),
+                          )
+                        : Container(
+                            margin: const EdgeInsets.symmetric(
+                              vertical: 15,
+                            ),
+                            child: ElevatedButton.icon(
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 25,
+                                  vertical: 15,
+                                ),
+                              ),
+                              onPressed: _downloadLoader
+                                  ? null
+                                  : () async {
+                                      try {
+                                        print("Downloading");
+                                        setState(() {
+                                          _downloadLoader = true;
+                                          _downloadCount = 0.00;
+                                          _downloadTotal = 0.00;
+                                          _installed = false;
+                                        });
+                                        await _prepareSaveDir();
+
+                                        await Dio().download(
+                                          "https://github.com//flutter/flutter/archive/refs/heads/master.zip",
+                                          _localPath + "/" + "flutter.zip",
+                                          lengthHeader:
+                                              Headers.contentLengthHeader,
+                                          onReceiveProgress: (count, total) {
+                                            setState(() {
+                                              _downloadCount = double.parse(
+                                                  count.toString());
+                                              _downloadTotal = double.parse(
+                                                  total.toString());
+                                            });
+                                          },
+                                        );
+                                        // Use an InputFileStream to access the zip file without storing it in memory.
+                                        final inputStream = InputFileStream(
+                                            "${_flutterLocation.value.text}/flutter.zip");
+
+                                        final archive = ZipDecoder()
+                                            .decodeBuffer(inputStream);
+                                        extractArchiveToDisk(
+                                          archive,
+                                          _flutterLocation.value.text,
+                                          asyncWrite: true,
+                                        );
+                                        if (_pathVariable) {
+                                          print(_flutterLocation.value.text
+                                              .replaceAll("\\", "\\\\"));
+                                          var result =
+                                              await AppPlatformChannel.add(
+                                                  _flutterLocation.value.text
+                                                      .replaceAll(
+                                                          "\\", "\\\\"));
+                                        }
+
+                                        setState(() {
+                                          _installed = true;
+                                          _downloadLoader = false;
+                                        });
+                                        print("Download Completed.");
+                                      } catch (e) {
+                                        print("Download Failed.\n\n" +
+                                            e.toString());
+                                        setState(() {
+                                          _isLoading = false;
+                                        });
+                                      }
+                                    },
+                              icon: const Icon(
+                                Icons.install_desktop,
+                              ),
+                              label: Text(
+                                _downloadLoader ? "DOWNLOADING..." : "INSTALL",
+                              ),
+                            ),
+                          ),
+                    // if (_downloadLoader)
+                    Container(
+                      // color: Colors.red,
+                      width: 65,
+                      height: 65,
+                      child: !_downloadLoader
+                          ? const SizedBox.expand()
+                          : _downloadTotal == -1
+                              ? const CircularProgressIndicator.adaptive(
+                                  strokeWidth: 8,
+                                  backgroundColor: Colors.black87,
+                                )
+                              : Stack(
+                                  children: [
+                                    Center(
+                                      child: Text(
+                                        "${_downloadTotal == 0 ? 0 : ((_downloadCount / _downloadTotal) * 100).toStringAsFixed(0)}%",
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                  ),
-                  if (_installed)
-                    Lottie.network(
-                        'https://raw.githubusercontent.com/xvrh/lottie-flutter/master/example/assets/Mobilo/A.json')
-                ],
+                                    Center(
+                                      child: SizedBox(
+                                        height: 65,
+                                        width: 65,
+                                        child:
+                                            CircularProgressIndicator.adaptive(
+                                          backgroundColor: Colors.black87,
+                                          strokeWidth: 8,
+                                          value: _downloadTotal <= 0
+                                              ? null
+                                              : _downloadCount / _downloadTotal,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                    ),
+                  ],
+                ),
               ),
       ),
     );
