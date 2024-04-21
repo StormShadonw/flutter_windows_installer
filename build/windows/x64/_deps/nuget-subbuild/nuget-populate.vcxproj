@@ -1,0 +1,1015 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7AD369EE-3DF9-3867-AEBA-AD047E32491B}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>nuget-populate</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\c180f4cdfe8c403af36ddd54a05e1a65\nuget-populate-mkdir.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Creating directories for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Creating directories for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Creating directories for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Creating directories for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\c180f4cdfe8c403af36ddd54a05e1a65\nuget-populate-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Performing download step (download and verify) for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/download-nuget-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/verify-nuget-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\nuget-populate-urlinfo.txt;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Performing download step (download and verify) for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/download-nuget-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/verify-nuget-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\nuget-populate-urlinfo.txt;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Performing download step (download and verify) for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/download-nuget-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/verify-nuget-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\nuget-populate-urlinfo.txt;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Performing download step (download and verify) for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/download-nuget-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -P C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/verify-nuget-populate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\nuget-populate-urlinfo.txt;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\c180f4cdfe8c403af36ddd54a05e1a65\nuget-populate-update.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No update step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No update step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No update step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No update step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\c180f4cdfe8c403af36ddd54a05e1a65\nuget-populate-patch.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No patch step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No patch step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No patch step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No patch step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\c180f4cdfe8c403af36ddd54a05e1a65\nuget-populate-copyfile.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Copying file to SOURCE_DIR</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget.exe C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-copyfile
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Copying file to SOURCE_DIR</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget.exe C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-copyfile
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Copying file to SOURCE_DIR</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget.exe C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-copyfile
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Copying file to SOURCE_DIR</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E copy_if_different C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget.exe C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-src
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-copyfile
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\c180f4cdfe8c403af36ddd54a05e1a65\nuget-populate-configure.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No configure step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\tmp\nuget-populate-cfgcmd.txt;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No configure step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\tmp\nuget-populate-cfgcmd.txt;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No configure step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\tmp\nuget-populate-cfgcmd.txt;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No configure step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\tmp\nuget-populate-cfgcmd.txt;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\c180f4cdfe8c403af36ddd54a05e1a65\nuget-populate-build.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No build step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No build step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No build step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No build step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\c180f4cdfe8c403af36ddd54a05e1a65\nuget-populate-install.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No install step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No install step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No install step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No install step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\c180f4cdfe8c403af36ddd54a05e1a65\nuget-populate-test.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">No test step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">No test step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">No test step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">No test step for 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-test</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\6fa98a07037daf2e25206deb30524248\nuget-populate-complete.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Completed 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/$(Configuration)/nuget-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-test;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\$(Configuration)\nuget-populate-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Completed 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/$(Configuration)/nuget-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-test;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\$(Configuration)\nuget-populate-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Completed 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/$(Configuration)/nuget-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-test;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\$(Configuration)\nuget-populate-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Completed 'nuget-populate'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E make_directory C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/$(Configuration)/nuget-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E touch C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/nuget-populate-prefix/src/nuget-populate-stamp/$(Configuration)/nuget-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-install;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-mkdir;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-download;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-update;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-patch;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-configure;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-build;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-test;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\src\nuget-populate-stamp\$(Configuration)\nuget-populate-copyfile;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\$(Configuration)\nuget-populate-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\4ddf7ca25bb09cdfd54e989e79658127\nuget-populate.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\$(Configuration)\nuget-populate-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\nuget-populate</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\$(Configuration)\nuget-populate-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\nuget-populate</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\$(Configuration)\nuget-populate-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\nuget-populate</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\$(Configuration)\nuget-populate-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\nuget-populate</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild -BC:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild --check-stamp-file C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\ExternalProject-download.cmake.in;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\ExternalProject.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\RepositoryInfo.txt.in;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\3.21.21080301-MSVC_2\CMakeSystem.cmake;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\tmp\nuget-populate-cfgcmd.txt.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild -BC:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild --check-stamp-file C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\ExternalProject-download.cmake.in;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\ExternalProject.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\RepositoryInfo.txt.in;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\3.21.21080301-MSVC_2\CMakeSystem.cmake;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\tmp\nuget-populate-cfgcmd.txt.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild -BC:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild --check-stamp-file C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\ExternalProject-download.cmake.in;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\ExternalProject.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\RepositoryInfo.txt.in;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\3.21.21080301-MSVC_2\CMakeSystem.cmake;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\tmp\nuget-populate-cfgcmd.txt.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild -BC:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild --check-stamp-file C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeGenericSystem.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\ExternalProject-download.cmake.in;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\ExternalProject.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\Platform\Windows.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.21\Modules\RepositoryInfo.txt.in;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\3.21.21080301-MSVC_2\CMakeSystem.cmake;C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\nuget-populate-prefix\tmp\nuget-populate-cfgcmd.txt.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\CMakeFiles\nuget-populate">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\_deps\nuget-subbuild\ZERO_CHECK.vcxproj">
+      <Project>{57BCBBE8-049D-31A8-9227-5187735E0465}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

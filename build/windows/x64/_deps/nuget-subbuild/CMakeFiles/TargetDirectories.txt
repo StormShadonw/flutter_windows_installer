@@ -1,0 +1,3 @@
+C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/nuget-populate.dir
+C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/ALL_BUILD.dir
+C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/ZERO_CHECK.dir

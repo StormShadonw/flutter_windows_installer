@@ -1,0 +1,49 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/nuget-populate"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/4ddf7ca25bb09cdfd54e989e79658127/nuget-populate.rule"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/6fa98a07037daf2e25206deb30524248/nuget-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/c180f4cdfe8c403af36ddd54a05e1a65/nuget-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/c180f4cdfe8c403af36ddd54a05e1a65/nuget-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/c180f4cdfe8c403af36ddd54a05e1a65/nuget-populate-copyfile.rule"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/c180f4cdfe8c403af36ddd54a05e1a65/nuget-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/c180f4cdfe8c403af36ddd54a05e1a65/nuget-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/c180f4cdfe8c403af36ddd54a05e1a65/nuget-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/c180f4cdfe8c403af36ddd54a05e1a65/nuget-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/c180f4cdfe8c403af36ddd54a05e1a65/nuget-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/_deps/nuget-subbuild/CMakeFiles/c180f4cdfe8c403af36ddd54a05e1a65/nuget-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"nuget-populate"
+		],
+		"name" : "nuget-populate"
+	}
+}
