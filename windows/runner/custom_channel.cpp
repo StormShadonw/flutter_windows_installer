@@ -97,14 +97,15 @@ bool SetRegistryStringValue(HKEY hKey, LPCWSTR subKey, LPCWSTR valueName, const 
                 std::string a = std::get<std::string>(a_it->second);
                 std::wstring c(a.begin(), a.end());
 
-                     LPCWSTR subKey = L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment";
+                     LPCWSTR subKey = L"Environment";
+                    //  LPCWSTR subKey = L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment";
                       LPCWSTR valueName = L"PATH";
-                      std::wstring currentValue = GetRegistryStringValue(HKEY_LOCAL_MACHINE, subKey, valueName);
+                      std::wstring currentValue = GetRegistryStringValue(HKEY_CURRENT_USER, subKey, valueName);
                     std::wstring newData = std::wstring(c.begin(), c.end());
                       std::wstring newData1 = L"\\flutter-master\\bin";
                       std::wstring updatedValue = currentValue + L";" + newData + newData1; // Aquí se está concatenando el valor actual con los nuevos datos
                res = flutter::EncodableValue(a_it->second);
-                                     if (SetRegistryStringValue(HKEY_LOCAL_MACHINE, subKey, valueName, updatedValue)) {
+                                     if (SetRegistryStringValue(HKEY_CURRENT_USER, subKey, valueName, updatedValue)) {
                           res = flutter::EncodableValue(a_it->second);
                           (*resPointer)->Success(res);
 
@@ -117,37 +118,6 @@ bool SetRegistryStringValue(HKEY hKey, LPCWSTR subKey, LPCWSTR valueName, const 
                      else {
         (*resPointer)->Error("El valor 'a' no se encontró");
     }
-
-            //    if(a){
-            //     //  // convert to string since we send back the result as string
-
-
-            //     //       // Obtener el valor actual del registro
-            //     //       std::wstring currentValue = GetRegistryStringValue(HKEY_LOCAL_MACHINE, subKey, valueName);
-            //     //           res = flutter::EncodableValue("Valor actualizado correctamente: ");
-            //     //           (*resPointer)->Success(res);
-
-            //     //       // Agregar más datos al valor actual
-            //     //       std::wstring newData = std::wstring(c.begin(), c.end());
-            //     //       std::wstring newData1 = L"\\flutter-master\\bin";
-            //     //       std::wstring updatedValue = currentValue + L";" + newData + newData1; // Aquí se está concatenando el valor actual con los nuevos datos
-
-            //           // Establecer el nuevo valor en el registro
-            //     //       if (SetRegistryStringValue(HKEY_LOCAL_MACHINE, subKey, valueName, updatedValue)) {
-            //     //           res = flutter::EncodableValue("Valor actualizado correctamente: " + c);
-            //     //           (*resPointer)->Success(res);
-
-            //     //       }
-            //     //       else {
-            //     //  (*resPointer)->Error("Error occured");
-
-            //     //       }
-            //     // send positive result
-            //      (*resPointer)->Success(res);
-            //    }else{
-            //     // if not send error
-            //      (*resPointer)->Error("Error occured");
-            //    }
         }
     };
 

@@ -137,10 +137,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\plugins\desktop_window\desktop_window_plugin.vcxproj">
-      <Project>{688CF8B1-F1A3-32D6-A223-A9B7BA87DB70}</Project>
-      <Name>desktop_window_plugin</Name>
-    </ProjectReference>
     <ProjectReference Include="C:\Users\luisj\Desktop\Jorge\flutterApps\flutter_windows_installer\build\windows\x64\runner\flutter_windows_installer.vcxproj">
       <Project>{73E5DFD7-E983-35A7-9798-636FF494F18B}</Project>
       <Name>flutter_windows_installer</Name>

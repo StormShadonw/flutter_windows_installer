@@ -8,6 +8,3 @@ C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows
 C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/runner/CMakeFiles/INSTALL.dir
 C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/runner/CMakeFiles/flutter_windows_installer.dir
 C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/runner/CMakeFiles/ALL_BUILD.dir
-C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/plugins/desktop_window/CMakeFiles/desktop_window_plugin.dir
-C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/plugins/desktop_window/CMakeFiles/INSTALL.dir
-C:/Users/luisj/Desktop/Jorge/flutterApps/flutter_windows_installer/build/windows/x64/plugins/desktop_window/CMakeFiles/ALL_BUILD.dir

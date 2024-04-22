@@ -26,7 +26,7 @@ class AppPlatformChannel {
 class MyHomePage extends StatefulWidget {
   final String FLUTTER_GIT_URL =
       "https://github.com//flutter/flutter/archive/refs/heads/master.zip";
-  final String FLUTTER_DEFAULT_INSTALLATION_LOCATION = "c:\\flutter";
+  final String FLUTTER_DEFAULT_INSTALLATION_LOCATION = "c:\flutter";
   final Size WINDOWS_MIN_SIZE = const Size(400, 400);
   final Size WINDOWS_MAX_SIZE = const Size(800, 800);
   @override
@@ -116,7 +116,8 @@ class _MyHomePageState extends State<MyHomePage> {
       );
       if (_pathVariable) {
         await AppPlatformChannel.add(
-            _flutterLocation.value.text.replaceAll("\\", "\\\\"));
+            // _flutterLocation.value.text.replaceAll("\\", "\\\\"));
+            _flutterLocation.value.text);
       }
 
       setState(() {
