@@ -102,7 +102,7 @@ bool SetRegistryStringValue(HKEY hKey, LPCWSTR subKey, LPCWSTR valueName, const 
                       LPCWSTR valueName = L"PATH";
                       std::wstring currentValue = GetRegistryStringValue(HKEY_CURRENT_USER, subKey, valueName);
                     std::wstring newData = std::wstring(c.begin(), c.end());
-                      std::wstring newData1 = L"\\flutter-master\\bin";
+                      std::wstring newData1 = L"\\flutter\\bin";
                       std::wstring updatedValue = currentValue + L";" + newData + newData1; // Aquí se está concatenando el valor actual con los nuevos datos
                res = flutter::EncodableValue(a_it->second);
                                      if (SetRegistryStringValue(HKEY_CURRENT_USER, subKey, valueName, updatedValue)) {

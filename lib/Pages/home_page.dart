@@ -1,11 +1,9 @@
 import 'dart:io';
-
-import 'package:archive/archive_io.dart';
-import 'package:dio/dio.dart';
 import 'package:filepicker_windows/filepicker_windows.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
+import 'package:rw_git/rw_git.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppPlatformChannel {
@@ -24,8 +22,7 @@ class AppPlatformChannel {
 }
 
 class MyHomePage extends StatefulWidget {
-  final String FLUTTER_GIT_URL =
-      "https://github.com//flutter/flutter/archive/refs/heads/master.zip";
+  final String FLUTTER_GIT_URL = "https://github.com/flutter/flutter";
   final String FLUTTER_DEFAULT_INSTALLATION_LOCATION = "c:\flutter";
   final Size WINDOWS_MIN_SIZE = const Size(400, 400);
   final Size WINDOWS_MAX_SIZE = const Size(800, 800);
@@ -36,11 +33,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   TextEditingController _flutterLocation = TextEditingController();
   late String _localPath;
-  // late TargetPlatform? platform;
   bool _isLoading = false;
   bool _downloadLoader = false;
-  double _downloadCount = 0.00;
-  double _downloadTotal = 0.00;
   late SharedPreferences prefs;
   bool _pathVariable = true;
   bool _installed = false;
@@ -82,42 +76,32 @@ class _MyHomePageState extends State<MyHomePage> {
     return directory.path + Platform.pathSeparator;
   }
 
+  String _createCheckoutDirectory(String directoryName) {
+    Directory checkoutDirectory = Directory(directoryName);
+    try {
+      checkoutDirectory.deleteSync(recursive: true);
+    } catch (e) {
+      // Handle the exception
+    }
+    checkoutDirectory.createSync();
+
+    return "${Directory.current.path}\\$directoryName";
+  }
+
   Future<void> download() async {
     try {
       print("Downloading");
       setState(() {
         _downloadLoader = true;
-        _downloadCount = 0.00;
-        _downloadTotal = 0.00;
         _installed = false;
       });
       await _prepareSaveDir();
-
-      await Dio().download(
-        widget.FLUTTER_GIT_URL,
-        _localPath + "/" + "flutter.zip",
-        lengthHeader: Headers.contentLengthHeader,
-        onReceiveProgress: (count, total) {
-          setState(() {
-            _downloadCount = double.parse(count.toString());
-            _downloadTotal = double.parse(total.toString());
-          });
-        },
-      );
-      // Use an InputFileStream to access the zip file without storing it in memory.
-      final inputStream =
-          InputFileStream("${_flutterLocation.value.text}/flutter.zip");
-
-      final archive = ZipDecoder().decodeBuffer(inputStream);
-      extractArchiveToDisk(
-        archive,
-        _flutterLocation.value.text,
-        asyncWrite: true,
-      );
+      final rwGit = RwGit();
+      var gitResult = await rwGit.clone(
+          _flutterLocation.value.text, widget.FLUTTER_GIT_URL);
+      print("GitResult: $gitResult");
       if (_pathVariable) {
-        await AppPlatformChannel.add(
-            // _flutterLocation.value.text.replaceAll("\\", "\\\\"));
-            _flutterLocation.value.text);
+        await AppPlatformChannel.add(_flutterLocation.value.text);
       }
 
       setState(() {
@@ -324,44 +308,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     // if (_downloadLoader)
                     Container(
-                      // color: Colors.red,
-                      width: 65,
-                      height: 65,
-                      child: !_downloadLoader
-                          ? const SizedBox.expand()
-                          : _downloadTotal == -1
-                              ? const CircularProgressIndicator.adaptive(
-                                  strokeWidth: 8,
-                                  backgroundColor: Colors.black87,
-                                )
-                              : Stack(
-                                  children: [
-                                    Center(
-                                      child: Text(
-                                        "${_downloadTotal == 0 ? 0 : ((_downloadCount / _downloadTotal) * 100).toStringAsFixed(0)}%",
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                    Center(
-                                      child: SizedBox(
-                                        height: 65,
-                                        width: 65,
-                                        child:
-                                            CircularProgressIndicator.adaptive(
-                                          backgroundColor: Colors.black87,
-                                          strokeWidth: 8,
-                                          value: _downloadTotal <= 0
-                                              ? null
-                                              : _downloadCount / _downloadTotal,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                    ),
+                        // color: Colors.red,
+                        width: 65,
+                        height: 65,
+                        child: !_downloadLoader
+                            ? const SizedBox.expand()
+                            : const CircularProgressIndicator.adaptive(
+                                strokeWidth: 8,
+                                backgroundColor: Colors.black87,
+                              )),
                   ],
                 ),
               ),
